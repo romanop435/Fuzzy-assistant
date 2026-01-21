@@ -1,0 +1,410 @@
+﻿commands:
+  - id: greet
+    patterns:
+      - "привет"
+      - "доброе утро"
+      - "добрый день"
+    action:
+      type: say
+      text: "Привет!"
+  - id: how_are_you
+    patterns:
+      - "как дела"
+    action:
+      type: say
+      text: "Все хорошо."
+  - id: who_are_you
+    patterns:
+      - "кто ты"
+      - "что ты умеешь"
+    action:
+      type: say
+      text: "Я офлайн помощник Фази. Могу открывать сайты, ставить таймеры и выполнять команды."
+  - id: tell_joke
+    patterns:
+      - "расскажи анекдот"
+    action:
+      type: joke
+  - id: thanks
+    patterns:
+      - "спасибо"
+    action:
+      type: say
+      text: "Пожалуйста!"
+  - id: bye
+    patterns:
+      - "пока"
+    action:
+      type: say
+      text: "До встречи!"
+
+  - id: time_now
+    patterns:
+      - "который час"
+      - "сколько времени"
+    action:
+      type: time_now
+  - id: date_today
+    patterns:
+      - "какой сегодня день"
+      - "какое число"
+    action:
+      type: date_today
+
+  - id: volume_up
+    patterns:
+      - "громче"
+      - "сделай громче"
+    action:
+      type: volume_up
+  - id: volume_down
+    patterns:
+      - "тише"
+      - "сделай тише"
+    action:
+      type: volume_down
+  - id: volume_max
+    patterns:
+      - "громкость на максимум"
+    action:
+      type: volume_max
+  - id: volume_mute
+    patterns:
+      - "выключи звук"
+    action:
+      type: volume_mute
+  - id: volume_unmute
+    patterns:
+      - "включи звук"
+    action:
+      type: volume_unmute
+
+  - id: brightness_up
+    patterns:
+      - "ярче"
+      - "сделай ярче"
+    action:
+      type: brightness_up
+  - id: brightness_down
+    patterns:
+      - "темнее"
+      - "сделай темнее"
+    action:
+      type: brightness_down
+
+  - id: open_browser
+    patterns:
+      - "открой браузер"
+      - "запусти браузер"
+      - "открой хром"
+    action:
+      type: open_browser
+      tts: "Открываю браузер"
+  - id: open_youtube
+    patterns:
+      - "открой ютуб"
+      - "открой youtube"
+      - "открой ютьюб"
+    action:
+      type: open_url
+      url: "https://youtube.com"
+      tts: "Открываю YouTube"
+  - id: open_google
+    patterns:
+      - "открой google"
+      - "открой гугл"
+    action:
+      type: open_url
+      url: "https://www.google.com"
+      tts: "Открываю Google"
+  - id: open_chatgpt
+    patterns:
+      - "открой chatgpt"
+      - "открой чатгпт"
+      - "открой чат гпт"
+      - "открой чат джипити"
+      - "открой чат gpt"
+    action:
+      type: open_url
+      url: "https://chatgpt.com"
+      tts: "Открываю ChatGPT"
+  - id: open_vk
+    patterns:
+      - "открой вконтакте"
+      - "открой вк"
+    action:
+      type: open_url
+      url: "https://vk.com"
+      tts: "Открываю ВКонтакте"
+  - id: open_telegram
+    patterns:
+      - "открой телеграм"
+      - "открой telegram"
+    action:
+      type: open_url
+      url: "https://web.telegram.org"
+      tts: "Открываю Telegram"
+  - id: open_discord
+    patterns:
+      - "открой дискорд"
+      - "открой discord"
+    action:
+      type: open_url
+      url: "https://discord.com/app"
+      tts: "Открываю Discord"
+  - id: open_steam
+    patterns:
+      - "открой стим"
+      - "открой steam"
+    action:
+      type: open_url
+      url: "https://store.steampowered.com"
+      tts: "Открываю Steam"
+  - id: open_spotify
+    patterns:
+      - "открой спотифай"
+      - "открой spotify"
+    action:
+      type: open_url
+      url: "https://open.spotify.com"
+      tts: "Открываю Spotify"
+  - id: open_site
+    patterns:
+      - "открой сайт {site}"
+      - "открой {site} сайт"
+    action:
+      type: open_site
+      param: site
+      tts: "Открываю сайт {site}"
+  - id: google_search
+    patterns:
+      - "найди {query}"
+      - "загугли {query}"
+      - "найди в гугле {query}"
+      - "поиск {query}"
+    action:
+      type: google_search
+      param: query
+      tts: "Ищу в Google: {query}"
+  - id: wiki_search
+    patterns:
+      - "что такое {topic}"
+    action:
+      type: wiki_search
+      param: topic
+  - id: translate_text
+    patterns:
+      - "переведи {text}"
+    action:
+      type: translate
+      param: text
+
+  - id: open_notepad
+    patterns:
+      - "открой блокнот"
+    action:
+      type: run_allowlist
+      name: "notepad"
+  - id: open_calculator
+    patterns:
+      - "открой калькулятор"
+    action:
+      type: run_allowlist
+      name: "calculator"
+  - id: open_taskmgr
+    patterns:
+      - "диспетчер задач"
+    action:
+      type: run_allowlist
+      name: "taskmgr"
+  - id: run_allowlist
+    patterns:
+      - "запусти {name}"
+      - "открой файл {name}"
+      - "открой папку {name}"
+    action:
+      type: run_allowlist
+      param: name
+
+  - id: timer_set
+    patterns:
+      - "поставь таймер {payload}"
+      - "поставь таймер на {payload}"
+      - "таймер на {payload}"
+      - "таймер {payload}"
+      - "засеки {payload}"
+      - "напомни через {payload}"
+    action:
+      type: timer_set
+      param: payload
+  - id: timer_status
+    patterns:
+      - "сколько осталось"
+      - "сколько осталось на таймере"
+      - "таймер статус"
+    action:
+      type: timer_status
+  - id: timer_cancel
+    patterns:
+      - "отмени таймер {name}"
+      - "отмени таймер"
+    action:
+      type: timer_cancel
+      param: name
+
+  - id: screenshot
+    patterns:
+      - "сделай скриншот"
+    action:
+      type: screenshot
+  - id: media_play_pause
+    patterns:
+      - "пауза"
+      - "плей"
+    action:
+      type: media_play_pause
+  - id: media_next
+    patterns:
+      - "следующий трек"
+    action:
+      type: media_next
+  - id: media_prev
+    patterns:
+      - "предыдущий трек"
+    action:
+      type: media_prev
+  - id: show_desktop
+    patterns:
+      - "сверни все"
+      - "покажи рабочий стол"
+    action:
+      type: show_desktop
+  - id: close_window
+    patterns:
+      - "закрой окно"
+    action:
+      type: close_window
+  - id: switch_window
+    patterns:
+      - "переключи окно"
+    action:
+      type: switch_window
+
+  - id: type_text
+    patterns:
+      - "набери {text}"
+      - "напиши {text}"
+    action:
+      type: type_text
+      param: text
+  - id: copy
+    patterns:
+      - "копировать"
+    action:
+      type: hotkey
+      keys: ["ctrl", "c"]
+  - id: paste
+    patterns:
+      - "вставить"
+    action:
+      type: hotkey
+      keys: ["ctrl", "v"]
+  - id: cut
+    patterns:
+      - "вырезать"
+    action:
+      type: hotkey
+      keys: ["ctrl", "x"]
+  - id: select_all
+    patterns:
+      - "выделить все"
+    action:
+      type: hotkey
+      keys: ["ctrl", "a"]
+  - id: undo
+    patterns:
+      - "отмена"
+    action:
+      type: hotkey
+      keys: ["ctrl", "z"]
+  - id: save
+    patterns:
+      - "сохрани"
+    action:
+      type: hotkey
+      keys: ["ctrl", "s"]
+  - id: press_enter
+    patterns:
+      - "нажми энтер"
+      - "нажми enter"
+    action:
+      type: hotkey
+      keys: ["enter"]
+  - id: press_escape
+    patterns:
+      - "нажми эскейп"
+      - "нажми escape"
+    action:
+      type: hotkey
+      keys: ["esc"]
+
+  - id: note_add
+    patterns:
+      - "запомни {text}"
+    action:
+      type: note_add
+      param: text
+  - id: note_list
+    patterns:
+      - "мои заметки"
+      - "что запомнил"
+    action:
+      type: note_list
+
+  - id: math_eval
+    patterns:
+      - "сколько будет {expr}"
+      - "посчитай {expr}"
+    action:
+      type: math_eval
+      param: expr
+
+  - id: system_shutdown
+    patterns:
+      - "выключи компьютер"
+    action:
+      type: system_shutdown
+  - id: system_restart
+    patterns:
+      - "перезагрузи компьютер"
+    action:
+      type: system_restart
+  - id: system_sleep
+    patterns:
+      - "спящий режим"
+    action:
+      type: system_sleep
+  - id: system_lock
+    patterns:
+      - "заблокируй компьютер"
+    action:
+      type: system_lock
+  - id: battery_status
+    patterns:
+      - "заряд батареи"
+      - "заряд батареи?"
+    action:
+      type: battery_status
+
+  - id: weather_now
+    patterns:
+      - "какая погода"
+      - "погода"
+    action:
+      type: weather_search
+  - id: weather_city
+    patterns:
+      - "погода в {city}"
+    action:
+      type: weather_search
+      param: city

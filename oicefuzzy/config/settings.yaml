@@ -1,0 +1,28 @@
+app:
+  name: Fazi Assistant
+  locale: ru-RU
+  config_dir: config
+stt:
+  wake_word: "\u0444\u0430\u0437\u0438|\u0444\u0430\u0437\u0437\u0438|\u0444\u0430\
+    \u0437\u0435|fuzzy"
+  model_path: models/vosk-model-small-ru-0.22
+  command_timeout_sec: 8
+  silence_timeout_ms: 1200
+  sample_rate: 16000
+  device_index: null
+  debug_console: true
+tts:
+  enabled: true
+  volume: 0.9
+  rate: 180
+ui:
+  theme: dark
+  splash_enabled: true
+  splash_icon: assets/logo-fuzzy.png
+  splash_sound: assets/loading-icon.mp3
+  splash_volume: 0.7
+  splash_duration_ms: 4000
+  app_icon: assets/logo-fuzzy.png
+  overlay_enabled: false
+  overlay_opacity: 0.92
+  log_max_entries: 200

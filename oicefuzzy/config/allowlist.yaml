@@ -1,0 +1,17 @@
+items:
+  - name: "notepad"
+    path: "C:/Windows/System32/notepad.exe"
+    type: "app"
+    executable: true
+  - name: "calculator"
+    path: "C:/Windows/System32/calc.exe"
+    type: "app"
+    executable: true
+  - name: "taskmgr"
+    path: "C:/Windows/System32/taskmgr.exe"
+    type: "app"
+    executable: true
+  - name: "downloads"
+    path: "C:/Users/%USERNAME%/Downloads"
+    type: "folder"
+    executable: false
